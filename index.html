@@ -1,59 +1,36 @@
 <!DOCTYPE html>
-<html lang="en-us">
 
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title> NFL Word Guess Game </title>
-
-    <script type="text/javascript" src="Assets/javascript/game.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+  <meta charset="utf-8">
+  <title>Psychic Game</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
 
-
-
-<body background="Assets/images/stad.png">
-
-
-
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">NFL Word Guess Game</h1>
-            <p class="lead">Guess the letters to spell out the correct NFL team. Click any key to begin.</p>
-        </div>
-    </div>
-
-
-
-    <div class="container">
-
-        <div class="card text-center">
-            <div class="card-header">
-                <b>Your Word:</b>
+<body>
+    <header>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4">PSYCHIC GAME</h1>
+              <p class="lead">Take a guess at what letter I am thinking of, you have 5 guesses. Press a letter key to begin.</p>
             </div>
-            <div class="card-body">
-                <p class="card-text">Word guess goes here</p>
-            </div>
-        </div>
-<br><br>
-        <div class="card" style="width: 30rem;">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"> Number of Guesses Remaining: <p id="numGuesses"></p></li>
-                <li class="list-group-item"> Letters Guessed: <p id="wrongGuesses"></p></li>
-                <li class="list-group-item"> Wins: <p id="wins"></p></li>
-            </ul>
-        </div>
+          </div>
+    </header>
 
+<div class="containter">
+    <div class="card" style="width: 30rem;">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" id=wins> Wins: </li>
+          <li class="list-group-item" id=losses> Losses:</li>
+          <li class="list-group-item" id=guessesLeft> Guesses Remaining: </li>
+          <li class="list-group-item" id=LettersGuessed>Guesses Made: </li>
+        </ul>
+      </div>
 
-
-
-
-
-
-    </div>
-
+   
+    
+  <script src="Assets/javascript/game.js"></script>
+  </div>
 </body>
-
 </html>

@@ -1,3 +1,46 @@
-let guess= "";
+let wordBank = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+let playerWins = 0;
+let playerLosses = 0;
+let playerGuessesRemaining = 5;
+let playerGuesses = [];
 
-let wordBank = ['Arizona Cardinals', 'Atlanta Falcons', 'Baltimore Ravens', 'Buffalo Bills', 'Carolina Panthers', 'Chicago Bears', 'Cincinnati Bengals', 'Cleveland Browns', 'Dallas Cowboys', 'Denver Broncos', 'Detroit Lions', 'Green Bay Packers', 'Houston Texans', 'Indianapolis Colts', 'Jacksonville Jaguars', 'Kansas City Chiefs', 'Miami Dolphins', 'Minnesota Vikings', 'New England Patriots', 'New Orleans Saints', 'New York Giants', 'New York Jets', 'Oakland Raiders', 'Philadelphia Eagles', 'Pittsburgh Steelers', 'St. Louis Rams', 'San Diego Chargers', 'San Francisco 49ers', 'Seattle Seahawks', 'Tampa Bay Buccaneers', 'Tennessee Titans', 'Washington Redskins',];
+document.onkeyup = function (event) {
+    console.log(event.key)
+
+    let userGuess = event.key
+    let computerGuess = wordBank[Math.floor(Math.random()*wordBank.length)];
+
+    console.log(computerGuess);
+    console.log(playerWins);
+    console.log(playerLosses);
+    console.log(playerGuessesRemaining);
+
+
+
+    if (userGuess === computerGuess) {
+        playerGuessesRemaining = 5;
+        playerWins++;
+        playerGuesses = [];
+        alert("Yay, you have WON!!")
+    }
+
+    else {
+        playerGuessesRemaining--
+        playerGuesses.push(userGuess);
+    };
+
+
+
+    if (playerGuessesRemaining === 0) {
+        playerLosses++;
+        playerGuessesRemaining = playerGuessesRemaining + 5;
+        playerGuesses = [];
+        alert("Sorry, you have lost!")
+    }
+
+
+    document.getElementById('wins').innerHTML = 'Wins: ' + playerWins;
+    document.getElementById('losses').innerHTML = 'Losses: ' + playerLosses;
+    document.getElementById('guessesLeft').innerHTML = 'Guesses Remaining: ' + playerGuessesRemaining;
+    document.getElementById('LettersGuessed').innerHTML = 'Guesses So Far: ' + playerGuesses;
+}

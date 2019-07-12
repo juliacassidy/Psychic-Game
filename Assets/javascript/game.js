@@ -8,7 +8,7 @@ document.onkeyup = function (event) {
     console.log(event.key)
 
     let userGuess = event.key
-    let computerGuess = wordBank[Math.floor(Math.random()*wordBank.length)];
+    let computerGuess = wordBank[Math.floor(Math.random() * wordBank.length)];
 
     console.log(computerGuess);
     console.log(playerWins);
